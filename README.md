@@ -10,6 +10,6 @@ with [Egon Tripodi](http://www.egontripodi.com)
 
 This repo contains the following files:
 
-- Draft
+- [Draft](https://github.com/chrjmeyer/ImageConcernsPledgestoGiveBlood/blob/master/draft/ImageConcernsPledgestoGiveBlood.pdf)
 
 Replication files and questionnaire coming soon.
