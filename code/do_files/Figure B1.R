@@ -1,5 +1,8 @@
-rsource, terminator(END_OF_R) rpath("/usr/local/bin/R") roptions(`"--vanilla"') // on macos
-// rsource, terminator(END_OF_R) rpath(`"C:\Program Files\R\R-4.0.5\bin\R.exe"') roptions(`"--vanilla"')  // use this line instead if you run a windows box
+# on macos
+rsource, terminator(END_OF_R) rpath("/usr/local/bin/R") roptions(``"--vanilla"'') 
+
+# use this line instead if you run a windows box
+# rsource, terminator(END_OF_R) rpath(`"C:\Program Files\R\R-4.0.5\bin\R.exe"') roptions(`"--vanilla"'')  
 
 # HTE Analysis using Generalized Random Forest
 # Image Concerns in Pledges to Give Blood: Evidence from a Field Experiment
