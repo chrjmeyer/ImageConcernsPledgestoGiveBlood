@@ -1,0 +1,29 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+            &\multicolumn{1}{c}{donation\_willing}&\multicolumn{1}{c}{donation\_willing}&\multicolumn{1}{c}{donation\_willing}&\multicolumn{1}{c}{donation\_willing}\\
+\hline
+1.socialimage&       0.041         &       0.044         &       0.067         &       0.080         \\
+            &     (0.035)         &     (0.034)         &     (0.047)         &     (0.046)         \\
+[1em]
+1.donation\_treatment&                     &                     &      -0.032         &      -0.017         \\
+            &                     &                     &     (0.046)         &     (0.045)         \\
+[1em]
+1.socialimage#0.donation\_treatment&                     &                     &       0.000         &       0.000         \\
+            &                     &                     &         (.)         &         (.)         \\
+[1em]
+1.socialimage#1.donation\_treatment&                     &                     &      -0.057         &      -0.080         \\
+            &                     &                     &     (0.069)         &     (0.069)         \\
+[1em]
+\_cons      &       0.219\sym{***}&       0.164\sym{*}  &       0.232\sym{***}&       0.167\sym{*}  \\
+            &     (0.023)         &     (0.070)         &     (0.030)         &     (0.072)         \\
+\hline
+Observations&         614         &         614         &         614         &         614         \\
+\(R^{2}\)   &       .0023         &       .0835         &        .008         &       .0894         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}
