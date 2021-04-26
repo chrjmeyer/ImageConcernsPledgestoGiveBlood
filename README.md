@@ -1,9 +1,7 @@
 # README
 
 The material in this replication package replicates the results of <i>Image Concerns in Pledges to Give Blood: Evidence from a Field Experiment</i> by Christian Johannes Meyer and Egon Tripodi. The master file <code>code/replication.do</code> run all of the code contained in <code>tables_and_figure/do_files/</code> to recreate all figures and tables from the paper. The data is confidential and cannot be made publicly available. However, the HTML file <code>replication.html</code> contains the dynamic output of all analyses conducted (i.e. the whole code along with the output generated through Stata/R).</p>
-<p>If you find errors in the files or would like to run further analyses with this data, you are welcome to reach out to us. You can submit your code to Egon Tripodi (<a href="mailto:egon.tripodi@essex.ac.uk">egon.tripodi@essex.ac.uk</a>).</p> 
-
- ). We will run your code and return a dynamic document with all the outputs of your analyses.</p>
+<p>If you find errors in the files or would like to run further analyses with this data, you are welcome to reach out to us. You can submit your code to Egon Tripodi (<a href="mailto:egon.tripodi@essex.ac.uk">egon.tripodi@essex.ac.uk</a>). We will run your code and return a dynamic document with all the outputs of your analyses.</p>
 
 
 ## Data Availability and Provenance Statements
