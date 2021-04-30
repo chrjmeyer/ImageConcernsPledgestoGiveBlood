@@ -201,7 +201,7 @@ The data have been split into 4 different datasets to ensure anonymity and facil
 <td><code>Table A1.do</code></td>
 <td><code>Table_A1.xlsx</code>,<br/> and console output</td>
 <td>Data in column 1 have been taken directly from Bonn City Government Statistical Office 2017 population statistics (<code>
-	[www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2017.pdf](https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2017.pdf) </code>)</td>
+	<a href="https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2017.pdf">www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2017.pdf</a></code>)</td>
 </tr>
 <tr class="even">
 <td>Table A2</td>
