@@ -1,8 +1,5 @@
-# on macos
-rsource, terminator(END_OF_R) rpath("/usr/local/bin/R") roptions(``"--vanilla"'') 
-
-# use this line instead if you run a windows box
-# rsource, terminator(END_OF_R) rpath(`"C:\Program Files\R\R-4.0.5\bin\R.exe"') roptions(`"--vanilla"'')  
+rsource, terminator(END_OF_R) rpath("/usr/local/bin/R") roptions(`"--vanilla"') // on macos
+// rsource, terminator(END_OF_R) rpath(`"C:\Program Files\R\R-4.0.5\bin\R.exe"') roptions(`"--vanilla"')  // use this line instead if you run a windows box
 
 # HTE Analysis using Generalized Random Forest
 # Image Concerns in Pledges to Give Blood: Evidence from a Field Experiment
@@ -120,6 +117,6 @@ imp_cf_pooled %>%
   theme(legend.position="none")
 
 # Save plot
-ggsave("~/Dropbox/EUI Blood/data/field/processing/replication_package/results/Figure_A2.png", width = 15, height = 15, units = "cm")
+ggsave("~/Dropbox/EUI Blood/data/field/processing/replication_package/results/Figure_B1.png", width = 15, height = 15, units = "cm")
 
 END_OF_R

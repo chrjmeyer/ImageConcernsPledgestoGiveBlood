@@ -7,7 +7,7 @@
 . /***
 > __TABLE 1__
 > ***/
-. use "${c -(}data_in{c )-}/data_clean.dta", clear
+. use "${c -(}data_in{c )-}/main.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Table 1.do" 
 {txt}
@@ -201,7 +201,7 @@
 . /***
 > __TABLE 2__
 > ***/
-. use "${c -(}data_in{c )-}/data_clean.dta", clear
+. use "${c -(}data_in{c )-}/main.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Table 2.do" 
 {txt}
@@ -331,7 +331,7 @@ donation_willing {c |}{col 18}{res}{space 2} .2323232{col 30}{space 2} .0300886{
 . /***
 > __FIGURE 1__
 > ***/
-. use "${c -(}data_in{c )-}/data_clean.dta", clear
+. use "${c -(}data_in{c )-}/main.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Figure 1.do"
 {txt}
@@ -414,7 +414,7 @@ donation_willing {c |}{col 18}{res}{space 2} .2323232{col 30}{space 2} .0300886{
 . /***
 > __TABLE 3__
 > ***/
-. use "${c -(}data_in{c )-}/data_clean.dta", clear
+. use "${c -(}data_in{c )-}/main.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Table 3.do" 
 {txt}
@@ -703,7 +703,7 @@ donation_willing {c |}{col 18}{res}{space 2} .2323232{col 30}{space 2} .0300886{
 . /***
 > __TABLE 4__
 > ***/
-. use "${c -(}data_in{c )-}/data_clean.dta", clear
+. use "${c -(}data_in{c )-}/data_table_4.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Table 4.do" 
 {txt}
@@ -711,11 +711,11 @@ donation_willing {c |}{col 18}{res}{space 2} .2323232{col 30}{space 2} .0300886{
 {txt}
 {com}. des, s
 
-{txt}Contains data from {res}/Users/egontripodi/Dropbox/EUI Blood/data/field/data_in/data_clean.dta
+{txt}Contains data from {res}/Users/egontripodi/Dropbox/EUI Blood/data/field/data_in/data_table_4.dta
 {txt}  obs:{res}           614                          
-{txt} vars:{res}           116                          26 Apr 2021 13:25
-{txt}Sorted by: {res}unique_id
-{txt}
+{txt} vars:{res}             5                          29 Apr 2021 17:55
+{txt}Sorted by: 
+
 {com}. gen matched = (!missing(donated_during_study_period))
 {txt}
 {com}. 
@@ -834,7 +834,7 @@ now 10
 . /***
 > __FIGURE B1__
 > ***/
-. use "${c -(}data_in{c )-}/data_clean.dta", clear
+. use "${c -(}data_in{c )-}/main.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Figure B1.do"
 {txt}
@@ -1178,7 +1178,7 @@ Type 'q()' to quit R.
 . /***
 > __TABLE A2__
 > ***/
-. use "${c -(}data_in{c )-}/data_clean.dta", clear
+. use "${c -(}data_in{c )-}/main.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Table A2.do"
 {txt}
@@ -1280,7 +1280,7 @@ Type 'q()' to quit R.
 . /***
 > __TABLE A3__
 > ***/
-. use "${c -(}data_in{c )-}/data_clean.dta", clear
+. use "${c -(}data_in{c )-}/main.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Table A3.do" 
 {txt}
@@ -1584,7 +1584,7 @@ Type 'q()' to quit R.
 . /***
 > __TABLE D1__
 > ***/
-. use "${c -(}data_in{c )-}/choose_treatment.dta", clear
+. use "${c -(}data_in{c )-}/data_table_d1.dta", clear
 {txt}
 {com}. do "${c -(}dopath{c )-}/Table D1.do" 
 {txt}

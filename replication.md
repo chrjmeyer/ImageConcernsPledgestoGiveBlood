@@ -6,7 +6,7 @@ Christian Johannes Meyer and Egon Tripodi
 __TABLE 1__
 
 
-          . use "${data_in}/data_clean.dta", clear
+          . use "${data_in}/main.dta", clear
 
           . do "${dopath}/Table 1.do" 
 
@@ -149,7 +149,7 @@ __TABLE 1__
 __TABLE 2__
 
 
-          . use "${data_in}/data_clean.dta", clear
+          . use "${data_in}/main.dta", clear
 
           . do "${dopath}/Table 2.do" 
 
@@ -253,7 +253,7 @@ __TABLE 2__
 __FIGURE 1__
 
 
-          . use "${data_in}/data_clean.dta", clear
+          . use "${data_in}/main.dta", clear
 
           . do "${dopath}/Figure 1.do"
 
@@ -331,7 +331,7 @@ __FIGURE 1__
 __TABLE 3__
 
 
-          . use "${data_in}/data_clean.dta", clear
+          . use "${data_in}/main.dta", clear
 
           . do "${dopath}/Table 3.do" 
 
@@ -606,7 +606,7 @@ __TABLE 3__
 __TABLE 4__
 
 
-          . use "${data_in}/data_clean.dta", clear
+          . use "${data_in}/data_table_4.dta", clear
 
           . do "${dopath}/Table 4.do" 
 
@@ -614,10 +614,10 @@ __TABLE 4__
 
           . des, s
 
-          Contains data from /Users/egontripodi/Dropbox/EUI Blood/data/field/data_in/data_clean.dta
+          Contains data from /Users/egontripodi/Dropbox/EUI Blood/data/field/data_in/data_table_4.dta
             obs:           614                          
-           vars:           116                          26 Apr 2021 13:25
-          Sorted by: unique_id
+           vars:             5                          29 Apr 2021 17:55
+          Sorted by: 
 
           . gen matched = (!missing(donated_during_study_period))
 
@@ -730,7 +730,7 @@ __TABLE 4__
 __FIGURE B1__
 
 
-          . use "${data_in}/data_clean.dta", clear
+          . use "${data_in}/main.dta", clear
 
           . do "${dopath}/Figure B1.do"
 
@@ -863,21 +863,7 @@ __FIGURE B1__
                     +               honesty.prune.leaves = FALSE,
                     +               seed = 1507)imp_cf_pooled <- data.frame(variable=colnames(cf$X.orig),
                     +                        importance=variable_importance(cf),
-                    +                        outcome="Donation sign-up",treatment="Public")
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey1_social"] <- "Survey: Frequency of altruistic activity"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey1_blooddonation"] <- "Survey: Importance of donating blood"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey1_othersaltruism"] <- "Survey: Perception of blood donors as altruists"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenessdeutschesrotesk"] <- "Awareness of institutions: DRK"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_drk"] <- "Where would you donate: DRK"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenesshaema"] <- "Awareness of institutions: Commercial"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_haema"] <- "Where would you donate: Commercial"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenessuniversitätskli"] <- "Awareness of institutions: University"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_ukb"] <- "Where would you donate: University"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "age_group"] <- "Respondent age"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "postsurvey_gender"] <- "Respondent gender"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "groupdummy"] <- "Respondent came in group"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "postsurvey_migration_any"] <- "Respondent immigrant"
-          imp_cf_pooled$variable[imp_cf_pooled$variable == "longer_than_8_years"] <- "Respondent lived in Bonn > 8 years"imp_cf_pooled %>%
+                    +                        outcome="Donation sign-up",treatment="Public")imp_cf_pooled$variable[imp_cf_pooled$variable == "survey1_social"] <- "Survey: Frequency of altruistic activity"imp_cf_pooled$variable[imp_cf_pooled$variable == "survey1_blooddonation"] <- "Survey: Importance of donating blood"imp_cf_pooled$variable[imp_cf_pooled$variable == "survey1_othersaltruism"] <- "Survey: Perception of blood donors as altruists"imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenessdeutschesrotesk"] <- "Awareness of institutions: DRK"imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_drk"] <- "Where would you donate: DRK"imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenesshaema"] <- "Awareness of institutions: Commercial"imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_haema"] <- "Where would you donate: Commercial"imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenessuniversitätskli"] <- "Awareness of institutions: University"imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_ukb"] <- "Where would you donate: University"imp_cf_pooled$variable[imp_cf_pooled$variable == "age_group"] <- "Respondent age"imp_cf_pooled$variable[imp_cf_pooled$variable == "postsurvey_gender"] <- "Respondent gender"imp_cf_pooled$variable[imp_cf_pooled$variable == "groupdummy"] <- "Respondent came in group"imp_cf_pooled$variable[imp_cf_pooled$variable == "postsurvey_migration_any"] <- "Respondent immigrant"imp_cf_pooled$variable[imp_cf_pooled$variable == "longer_than_8_years"] <- "Respondent lived in Bonn > 8 years"imp_cf_pooled %>%
                     +   bind_rows(imp_cf_pooled) %>%
                     +   ggplot(aes(x=reorder(variable,importance),
                     +              y=importance,
@@ -889,9 +875,8 @@ __FIGURE B1__
                     +   scale_fill_brewer(name="Outcome:",
                     +                     palette = "RdBu") +
                     +   ggtitle("") +
-                    +   theme(legend.position="none")
-          ggsave("~/Dropbox/EUI Blood/data/field/processing/replication_package/results/Figure_A2.png", width = 15, height = 15, units = "cm")
-          End of R output
+                    +   theme(legend.position="none")ggsave("~/Dropbox/EUI Blood/data/field/processing/replication_package/results/Figure_B1.png", width = 15, height = 15, units = "cm")
+                    End of R output
 
 
 
@@ -1032,7 +1017,7 @@ __TABLE A1__
 __TABLE A2__
 
 
-          . use "${data_in}/data_clean.dta", clear
+          . use "${data_in}/main.dta", clear
 
           . do "${dopath}/Table A2.do"
 
@@ -1123,7 +1108,7 @@ __TABLE A2__
 __TABLE A3__
 
 
-          . use "${data_in}/data_clean.dta", clear
+          . use "${data_in}/main.dta", clear
 
           . do "${dopath}/Table A3.do" 
 
@@ -1413,7 +1398,7 @@ __TABLE A3__
 __TABLE D1__
 
 
-          . use "${data_in}/choose_treatment.dta", clear
+          . use "${data_in}/data_table_d1.dta", clear
 
           . do "${dopath}/Table D1.do" 
 
