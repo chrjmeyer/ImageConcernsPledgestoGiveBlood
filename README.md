@@ -55,7 +55,8 @@ The data have been split into 4 different datasets to ensure anonymity and facil
 <p>Replicating all the results will require about 5 minutes. However, exact computation time may vary according the specific hardware used.</p>
 
 ### Software Requirements
-<blockquote>
+
+
 <p>The following is a list of all software packages used:</p>
 <ul>
 <li>Stata (code was last run with version 16.0)
@@ -89,9 +90,6 @@ The data have been split into 4 different datasets to ensure anonymity and facil
 <li><code>xtable</code> (as of 2021-04-26)</li>
 </ul></li>
 </ul>
-
-</blockquote>
-</blockquote>
 
 
 ## Description of Files
