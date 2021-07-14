@@ -1,31 +1,3 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style>
-  	body{margin:30px}
-  	body{text-align: justify}
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    table{
-	  border-collapse: separate;
-	  border-spacing: 15px 0; /* space between cols */
-	}
-	th,td{
-	  padding: 10px 0; /* space between rows */
-	  border-bottom: 1px solid #ddd; /* line between rows */
-	  min-width: 100px; /* min width of col */
-	}
-  </style>
-</head>
-<body>
 <h1 id="template-readme-and-guidance">README</h1>
 <blockquote>
 <p>The material in this replication package replicates the results of <i>Image Concerns in Pledges to Give Blood: Evidence from a Field Experiment</i> by Christian Johannes Meyer and Egon Tripodi. The master file <code>code/replication.do</code> run all of the code contained in <code>tables_and_figure/do_files/</code> to recreate all figures and tables from the paper. The replicator should expect running the whole replication to take just few minutes. Besides, the markdown file <code>replication.md</code> contains the dynamic output of all analyses conducted (i.e. the whole code along with the output generated through Stata/R).</p>
