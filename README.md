@@ -16,7 +16,6 @@ The analysis in the paper is based on four different datasets:
 <th>Data file</th>
 <th>Source</th>
 <th>Notes</th>
-<th>Provided</th>
 </tr>
 </thead>
 <tbody>
@@ -30,19 +29,16 @@ The analysis in the paper is based on four different datasets:
 <td><code>data/data_table_4.dta</code></td>
 <td>Administrative data</td>
 <td>Used to replicate Table 4.</td>
-<td>Yes</td>
 </tr>
 <tr class="even">
 <td><code>data/data_table_a1.dta</code></td>
 <td>Survey and municipal statistics</td>
 <td>Used to replicate Table A1.</td>
-<td>Yes</td>
 </tr>
 <tr class="odd">
 <td><code>data/data_table_d1.dta</code></td>
 <td>Survey and field experiment</td>
 <td>Used to replicate Table D1.</td>
-<td>Yes</td>
 </tr>
 </tbody>
 </table>
