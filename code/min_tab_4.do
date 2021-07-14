@@ -1,0 +1,1 @@
+keep donation_treatment socialimage donated_during_study_period already_donor donation_willing

@@ -294,20 +294,20 @@
 . * Baseline means
 . mean donation_willing if socialimage==0 //cols 1-2
 {res}
-{txt}Mean estimation{col 39}Number of obs{col 55}= {res}       333
+{txt}Mean estimation{col 48}{lalign 13:Number of obs}{col 61} = {res}{ralign 3:333}
 
 {txt}{hline 17}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
-{col 18}{c |}       Mean{col 30}   Std. Err.{col 42}     [95% Con{col 55}f. Interval]
+{col 18}{c |}       Mean{col 30}   Std. err.{col 42}     [95% con{col 55}f. interval]
 {hline 17}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
 donation_willing {c |}{col 18}{res}{space 2} .2192192{col 30}{space 2} .0227057{col 41}{space 5}  .174554{col 55}{space 3} .2638844
 {txt}{hline 17}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
 
 {com}. mean donation_willing if socialimage==0 & donation_treatment==0 //cols 3-4
 {res}
-{txt}Mean estimation{col 39}Number of obs{col 55}= {res}       198
+{txt}Mean estimation{col 48}{lalign 13:Number of obs}{col 61} = {res}{ralign 3:198}
 
 {txt}{hline 17}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
-{col 18}{c |}       Mean{col 30}   Std. Err.{col 42}     [95% Con{col 55}f. Interval]
+{col 18}{c |}       Mean{col 30}   Std. err.{col 42}     [95% con{col 55}f. interval]
 {hline 17}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
 donation_willing {c |}{col 18}{res}{space 2} .2323232{col 30}{space 2} .0300886{col 41}{space 5} .1729861{col 55}{space 3} .2916604
 {txt}{hline 17}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
@@ -711,9 +711,9 @@ donation_willing {c |}{col 18}{res}{space 2} .2323232{col 30}{space 2} .0300886{
 {txt}
 {com}. des, s
 
-{txt}Contains data from {res}/Users/egontripodi/Dropbox/EUI Blood/data/field/data_in/data_table_4.dta
-{txt}  obs:{res}           614                          
-{txt} vars:{res}             5                          29 Apr 2021 17:55
+{txt}Contains data from {res}C:\Users\giaco\Dropbox\EUI Blood/data/field/data_in/data_table_4.dta
+{txt} Observations:{res}           614                  
+{txt}    Variables:{res}             5                  29 Apr 2021 17:55
 {txt}Sorted by: 
 
 {com}. gen matched = (!missing(donated_during_study_period))
@@ -758,8 +758,8 @@ donation_willing {c |}{col 18}{res}{space 2} .2323232{col 30}{space 2} .0300886{
 {txt}
 {com}.         set obs 10
 {txt}{p}
-number of observations (_N)  was 0,
-now 10
+Number of observations ({bf:_N}) was 0,
+now 10.
 {p_end}
 
 {com}.         gen varname = ""
@@ -836,68 +836,30 @@ now 10
 > ***/
 . use "${c -(}data_in{c )-}/main.dta", clear
 {txt}
+{com}. rename survey2_awarenessuniversitätskli survey2_awarenessuniversitatskli
+{res}{txt}
+{com}. save "${c -(}data_rep{c )-}/tempfile_for_R.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+C:\Users\giaco\Dropbox\EUI Blood/data/field/processing/replication_package/data/tempfile_for_R.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\giaco\Dropbox\EUI Blood/data/field/processing/replication_package/data/tempfile_for_R.dta{rm}
+saved
+{p_end}
+
 {com}. do "${c -(}dopath{c )-}/Figure B1.do"
 {txt}
-{com}. rsource, terminator(END_OF_R) rpath("/usr/local/bin/R") roptions(`"--vanilla"') // on macos
-{res}{err}Unknown #command
-Unknown #command
-Unknown #command
-{res}{err}Unknown #command
-Unknown #command
-{res}{err}Unknown #command
-{res}{err}Unknown #command
-{res}{err}Unknown #command
-Unknown #command
-{res}{err}Unknown #command
-{res}{err}Unknown #command
-{res}{err}Unknown #command
-{res}{err}Unknown #command
-Unknown #command
-Unknown #command
-Unknown #command
-{res}{err}Unknown #command
-{res}{err}Unknown #command
-{res}{err}Unknown #command
-{res}{err}Unknown #command
-{res}{txt}Assumed R program path: {res}"/usr/local/bin/R"
-{txt}
-── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
-✔ ggplot2 3.3.3     ✔ purrr   0.3.4
-✔ tibble  3.0.4     ✔ dplyr   1.0.2
-✔ tidyr   1.1.2     ✔ stringr 1.4.0
-✔ readr   1.4.0     ✔ forcats 0.5.0
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
+{com}. // rsource, terminator(END_OF_R) rpath("/usr/local/bin/R") roptions(`"--vanilla"') // on macos
+. rsource, terminator(END_OF_R) rpath(`"C:\Program Files\R\R-4.1.0\bin\x64\Rterm.exe"') roptions(`"--vanilla"')  // use this line instead if you run a windows box
+{res}{txt}Assumed R program path: {res}"C:\Program Files\R\R-4.1.0\bin\x64\Rterm.exe"
+{txt}Beginning of R output
 
-Attaching package: ‘rlang’
-
-The following objects are masked from ‘package:purrr’:
-
-    %@%, as_function, flatten, flatten_chr, flatten_dbl, flatten_int,
-    flatten_lgl, flatten_raw, invoke, list_along, modify, prepend,
-    splice
-
-
-Attaching package: ‘magrittr’
-
-The following object is masked from ‘package:rlang’:
-
-    set_names
-
-The following object is masked from ‘package:purrr’:
-
-    set_names
-
-The following object is masked from ‘package:tidyr’:
-
-    extract
-
-Beginning of R output
-
-{res}R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
-Copyright (C) 2020 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin17.0 (64-bit)
+{res}R version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -914,9 +876,6 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > 
-> 
-> 
-> 
 > library(grf)
 > library(foreign)
 > library(tidyverse)
@@ -932,8 +891,7 @@ Type 'q()' to quit R.
 > 
 > set.seed(1507)
 > 
-> df <- read_dta("~/Dropbox/EUI Blood/data/field/data_in/data_clean.dta")
-> 
+> df <- read_dta("C:/Users/giaco/Dropbox/EUI Blood/data/field/processing/replication_package/data/tempfile_for_R.dta")
 > 
 > 
 > Y <-  df$donation_willing
@@ -959,7 +917,7 @@ Type 'q()' to quit R.
 +     survey2_wheredonate_drk,
 +     survey2_awarenesshaema,
 +     survey2_wheredonate_haema,
-+     survey2_awarenessuniversitätskli,
++     survey2_awarenessuniversitatskli,
 +     survey2_wheredonate_ukb,
 +     age_group,
 +     postsurvey_gender,
@@ -988,7 +946,7 @@ Type 'q()' to quit R.
 > imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_drk"] <- "Where would you donate: DRK"
 > imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenesshaema"] <- "Awareness of institutions: Commercial"
 > imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_haema"] <- "Where would you donate: Commercial"
-> imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenessuniversitätskli"] <- "Awareness of institutions: University"
+> imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_awarenessuniversitatskli"] <- "Awareness of institutions: University"
 > imp_cf_pooled$variable[imp_cf_pooled$variable == "survey2_wheredonate_ukb"] <- "Where would you donate: University"
 > imp_cf_pooled$variable[imp_cf_pooled$variable == "age_group"] <- "Respondent age"
 > imp_cf_pooled$variable[imp_cf_pooled$variable == "postsurvey_gender"] <- "Respondent gender"
@@ -1011,7 +969,7 @@ Type 'q()' to quit R.
 +   ggtitle("") +
 +   theme(legend.position="none")
 > 
-> ggsave("~/Dropbox/EUI Blood/data/field/processing/replication_package/results/Figure_A2.png", width = 15, height = 15, units = "cm")
+> ggsave("C:/Users/giaco/Dropbox/EUI Blood/data/field/processing/replication_package/results/Figure_B1.png", width = 15, height = 15, units = "cm")
 > 
 > 
 {txt}End of R output
@@ -1019,6 +977,8 @@ Type 'q()' to quit R.
 {com}. 
 {txt}end of do-file
 
+{com}. erase "${c -(}data_rep{c )-}/tempfile_for_R.dta"
+{txt}
 {com}. /***
 > ![](./results/Figure_B1.png)
 > ***/
@@ -1573,6 +1533,628 @@ Type 'q()' to quit R.
   1. {c |} {res}Public: Group - Alone   0.120   0.151   0.155   0.177   0.206   0.210   0.077   0.109   0.109 {txt}{c |}
   2. {c |} {res}            (p-value)   0.168   0.045   0.041   0.143   0.044   0.040   0.523   0.332   0.329 {txt}{c |}
      {c BLC}{hline 23}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c BRC}
+
+{com}. restore
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. 
+. ** Table B1 Panel A
+. /***
+> __TABLE B1 Panel A__
+> ***/
+. use "${c -(}data_in{c )-}/main.dta", clear
+{txt}
+{com}. do "${c -(}dopath{c )-}/Table B1a.do" 
+{txt}
+{com}. qui global controls_all "groupdummy i.survey1_social i.survey1_blooddonation i.survey1_othersaltruism survey2_awarenessdeutschesrotesk survey2_awarenesshaema survey2_awarenessuniversitätskli i.age_group i.postsurvey_migration_any survey2_yearsinbonn survey2_wheredonate_drk survey2_wheredonate_haema survey2_wheredonate_ukb"
+{txt}
+{com}. 
+. qui lasso2 donation_willing $controls_all, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_y=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_y"=="." {c -(} 
+.         qui gl lassochosen_y 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 socialimage $controls_all, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_v=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_v"=="." {c -(} 
+.         qui gl lassochosen_v 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 donation_treatment $controls_all, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_t=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_t"=="." {c -(} 
+.         qui gl lassochosen_t 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 groupdummy $controls_all if donation_treatment==1, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_g=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_g"=="." {c -(} 
+.         qui gl lassochosen_g 
+. {c )-}
+{txt}
+{com}. 
+. egen visibility_gender = concat(socialimage postsurvey_gender)
+{txt}
+{com}. replace visibility_gender = "1" if visibility_gender == "00"
+{txt}(179 real changes made)
+
+{com}. replace visibility_gender = "2" if visibility_gender == "01"
+{txt}(154 real changes made)
+
+{com}. replace visibility_gender = "3" if visibility_gender == "10"
+{txt}(135 real changes made)
+
+{com}. replace visibility_gender = "4" if visibility_gender == "11"
+{txt}(146 real changes made)
+
+{com}. destring visibility_gender, replace
+{txt}visibility_gender: all characters numeric; {res}replaced {txt}as {res}byte
+{txt}
+{com}. 
+. qui eststo m1: reg donation_willing i.visibility_gender, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m1 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m1 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m2: reg donation_willing i.visibility_gender $lassochosen_y ///
+>         $lassochosen_v $lassochosen_t $lassochosen_g , vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m2 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m2 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m3: reg donation_willing i.visibility_gender $lassochosen_y ///
+>         $lassochosen_v $lassochosen_t $lassochosen_g postsurvey_socialimage, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m3 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m3 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. 
+. qui lasso2 donation_willing $controls_all if donation_treatment==0, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_y=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_y"=="." {c -(} 
+.         qui gl lassochosen_y 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 socialimage $controls_all if donation_treatment==0, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_v=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_v"=="." {c -(} 
+.         qui gl lassochosen_v 
+.                 {c )-}
+{txt}
+{com}. 
+. qui lasso2 groupdummy $controls_all if donation_treatment==0, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_g=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_g"=="." {c -(} 
+.         qui gl lassochosen_g            
+. {c )-}
+{txt}
+{com}.                 
+. qui eststo m4: reg donation_willing i.visibility_gender if donation_treatment==0, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m4 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m4 : di %4.3f round(r(p), 0.001)      
+{txt}
+{com}. qui eststo m5: reg donation_willing i.visibility_gender $lassochosen_y ///
+>         $lassochosen_v $lassochosen_g if donation_treatment==0, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m5 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m5 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m6: reg donation_willing i.visibility_gender $lassochosen_y ///
+>         $lassochosen_v $lassochosen_g postsurvey_socialimage if donation_treatment==0, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m6 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m6 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. 
+. 
+. qui lasso2 donation_willing $controls_all if donation_treatment==1, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_y=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_y"=="." {c -(} 
+.         qui gl lassochosen_y 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 socialimage $controls_all if donation_treatment==1, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_v=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_v"=="." {c -(} 
+.         qui gl lassochosen_v 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 groupdummy $controls_all if donation_treatment==1, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_g=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_g"=="." {c -(} 
+.         qui gl lassochosen_g 
+.                 {c )-}
+{txt}
+{com}. 
+. qui eststo m7: reg donation_willing i.visibility_gender if donation_treatment==1, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m7 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m7 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m8: reg donation_willing i.visibility_gender $lassochosen_y ///
+>         $lassochosen_v $lassochosen_g if donation_treatment==1, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m8 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m8 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m9: reg donation_willing i.visibility_gender $lassochosen_y ///
+>         $lassochosen_v $lassochosen_g postsurvey_socialimage if donation_treatment==1, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_gender-2.visibility_gender)- ///
+>         (3.visibility_gender-1.visibility_gender)
+{txt}
+{com}. qui loc c_m9 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m9 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. 
+. qui esttab m1 m2 m3 m4 m5 m6 m7 m8 m9 using "${c -(}out{c )-}/Table_B1a.tex", keep(*visibility_gender _cons) ///
+>         b(3) se(3) stats(N r2, fmt(%6.0g) labels("Observations" "\(R^{c -(}2{c )-}\)")) replace
+{txt}
+{com}. 
+. di as res "################################## TABLE B1 Panel A ##################################"
+{res}################################## TABLE B1 Panel A ##################################
+{txt}
+{com}. 
+. estout m1 m2 m3 m4 m5 m6 m7 m8 m9, keep(*visibility_gender _cons) ///
+>         stats( N r2, fmt(%6.0g) labels("Observations" "R2")) ///
+>         ce(b(fmt(3) label("Coef")) se(par fmt(3))) nobaselevel title("TABLE B1a")
+{res}
+{txt}TABLE B1a
+{txt}{hline 129}
+{txt}                       m1           m2           m3           m4           m5           m6           m7           m8           m9
+{txt}                  Coef/se      Coef/se      Coef/se      Coef/se      Coef/se      Coef/se      Coef/se      Coef/se      Coef/se
+{txt}{hline 129}
+{txt}2.visibili~r{res}       -0.045       -0.015       -0.013       -0.052       -0.031       -0.025       -0.030       -0.007       -0.007{txt}
+            {res}      (0.045)      (0.046)      (0.046)      (0.060)      (0.063)      (0.063)      (0.070)      (0.069)      (0.069){txt}
+{txt}3.visibili~r{res}        0.041        0.057        0.051        0.063        0.077        0.066        0.005       -0.006       -0.006{txt}
+            {res}      (0.050)      (0.049)      (0.050)      (0.065)      (0.063)      (0.064)      (0.078)      (0.075)      (0.075){txt}
+{txt}4.visibili~r{res}       -0.000        0.017        0.014        0.023        0.031        0.022       -0.013       -0.009       -0.008{txt}
+            {res}      (0.048)      (0.049)      (0.049)      (0.067)      (0.070)      (0.069)      (0.070)      (0.073)      (0.073){txt}
+{txt}_cons       {res}        0.240        0.170        0.096        0.254        0.090       -0.015        0.215        0.172        0.159{txt}
+            {res}      (0.032)      (0.074)      (0.088)      (0.041)      (0.099)      (0.125)      (0.051)      (0.121)      (0.145){txt}
+{txt}{hline 129}
+{txt}Observations{res}          614          614          614          355          355          355          259          259          259{txt}
+{txt}R2          {res}        .0049        .0787        .0818        .0085        .1161        .1215        .0011        .1269        .1271{txt}
+{txt}{hline 129}
+
+{com}. 
+. preserve
+{txt}
+{com}.         qui clear
+{txt}
+{com}.         qui set obs 2
+{txt}
+{com}.         qui gen varname = ""
+{txt}
+{com}.         qui replace varname = "Public: Male - Female" in 1
+{txt}
+{com}.         qui replace varname = "(p-value)" in 2
+{txt}
+{com}.         forval col = 1/9{c -(}
+{txt}  2{com}.                 qui gen m`col' = ""
+{txt}  3{com}.         {c )-}
+{txt}
+{com}.         forval col = 1/9{c -(}
+{txt}  2{com}.                 qui replace m`col' = "`c_m`col''" in 1
+{txt}  3{com}.                 qui replace m`col' = "`p_m`col''" in 2
+{txt}  4{com}.         {c )-}
+{txt}
+{com}.         list, sep(100)
+{txt}
+     {c TLC}{hline 23}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c TRC}
+     {c |} {res}              varname      m1       m2       m3      m4       m5       m6      m7      m8      m9 {txt}{c |}
+     {c LT}{hline 23}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c RT}
+  1. {c |} {res}Public: Male - Female   0.004   -0.025   -0.024   0.012   -0.016   -0.019   0.012   0.004   0.004 {txt}{c |}
+  2. {c |} {res}            (p-value)   0.958    0.719    0.726   0.898    0.866    0.837   0.904   0.970   0.970 {txt}{c |}
+     {c BLC}{hline 23}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c BRC}
+
+{com}. restore
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. 
+. ** Table B1 Panel B
+. /***
+> __TABLE B1 Panel B__
+> ***/
+. use "${c -(}data_in{c )-}/main.dta", clear
+{txt}
+{com}. do "${c -(}dopath{c )-}/Table B1b.do" 
+{txt}
+{com}. qui global controls_all "groupdummy i.survey1_social i.survey1_blooddonation i.survey1_othersaltruism survey2_awarenessdeutschesrotesk survey2_awarenesshaema survey2_awarenessuniversitätskli i.postsurvey_gender i.postsurvey_migration_any survey2_yearsinbonn survey2_wheredonate_drk survey2_wheredonate_haema survey2_wheredonate_ukb"
+{txt}
+{com}. 
+. qui lasso2 donation_willing $controls_all, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_y=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_y"=="." {c -(} 
+.         qui gl lassochosen_y 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 socialimage $controls_all, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_v=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_v"=="." {c -(} 
+.         qui gl lassochosen_v 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 donation_treatment $controls_all, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_t=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_t"=="." {c -(} 
+.         qui gl lassochosen_t 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 groupdummy $controls_all if donation_treatment==1, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_g=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_g"=="." {c -(} 
+.         qui gl lassochosen_g 
+. {c )-}
+{txt}
+{com}. 
+. gen age_above30 = 1 if inrange(age,31,100)  //above median in the sample
+{txt}(297 missing values generated)
+
+{com}. replace  age_above30 = 0 if inrange(age,18,30) 
+{txt}(297 real changes made)
+
+{com}. 
+. egen visibility_age = concat(socialimage age_above30)
+{txt}
+{com}. replace visibility_age = "1" if visibility_age == "00"
+{txt}(159 real changes made)
+
+{com}. replace visibility_age = "2" if visibility_age == "01"
+{txt}(174 real changes made)
+
+{com}. replace visibility_age = "3" if visibility_age == "10"
+{txt}(138 real changes made)
+
+{com}. replace visibility_age = "4" if visibility_age == "11"
+{txt}(143 real changes made)
+
+{com}. destring visibility_age, replace
+{txt}visibility_age: all characters numeric; {res}replaced {txt}as {res}byte
+{txt}
+{com}. 
+. qui eststo m1: reg donation_willing i.visibility_age, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m1 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m1 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m2: reg donation_willing i.visibility_age $lassochosen_y ///
+>         $lassochosen_v $lassochosen_t $lassochosen_g , vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m2 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m2 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m3: reg donation_willing i.visibility_age $lassochosen_y ///
+>         $lassochosen_v $lassochosen_t $lassochosen_g postsurvey_socialimage, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m3 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m3 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. 
+. qui lasso2 donation_willing $controls_all if donation_treatment==0, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_y=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_y"=="." {c -(} 
+.         qui gl lassochosen_y 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 socialimage $controls_all if donation_treatment==0, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_v=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_v"=="." {c -(} 
+.         qui gl lassochosen_v 
+.                 {c )-}
+{txt}
+{com}. 
+. qui lasso2 groupdummy $controls_all if donation_treatment==0, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_g=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_g"=="." {c -(} 
+.         qui gl lassochosen_g            
+. {c )-}
+{txt}
+{com}.                 
+. qui eststo m4: reg donation_willing i.visibility_age if donation_treatment==0, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m4 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m4 : di %4.3f round(r(p), 0.001)      
+{txt}
+{com}. qui eststo m5: reg donation_willing i.visibility_age $lassochosen_y ///
+>         $lassochosen_v $lassochosen_g if donation_treatment==0, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m5 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m5 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m6: reg donation_willing i.visibility_age $lassochosen_y ///
+>         $lassochosen_v $lassochosen_g postsurvey_socialimage if donation_treatment==0, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m6 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m6 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. 
+. 
+. qui lasso2 donation_willing $controls_all if donation_treatment==1, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_y=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_y"=="." {c -(} 
+.         qui gl lassochosen_y 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 socialimage $controls_all if donation_treatment==1, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_v=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_v"=="." {c -(} 
+.         qui gl lassochosen_v 
+.                 {c )-}
+{txt}
+{com}.                 
+. qui lasso2 groupdummy $controls_all if donation_treatment==1, postresults 
+{txt}
+{com}. qui lasso2, lic(aic) postresults 
+{txt}
+{com}. qui gl lassochosen_g=e(selected)
+{txt}
+{com}. 
+. if "$lassochosen_g"=="." {c -(} 
+.         qui gl lassochosen_g 
+.                 {c )-}
+{txt}
+{com}. 
+. qui eststo m7: reg donation_willing i.visibility_age if donation_treatment==1, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m7 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m7 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m8: reg donation_willing i.visibility_age $lassochosen_y ///
+>         $lassochosen_v $lassochosen_g if donation_treatment==1, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m8 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m8 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. qui eststo m9: reg donation_willing i.visibility_age $lassochosen_y ///
+>         $lassochosen_v $lassochosen_g postsurvey_socialimage if donation_treatment==1, vce(robust)
+{txt}
+{com}. qui lincom (4.visibility_age-2.visibility_age)- ///
+>         (3.visibility_age-1.visibility_age)
+{txt}
+{com}. qui loc c_m9 : di %4.3f round(r(estimate), 0.001)
+{txt}
+{com}. qui loc p_m9 : di %4.3f round(r(p), 0.001)
+{txt}
+{com}. 
+. 
+. qui esttab m1 m2 m3 m4 m5 m6 m7 m8 m9 using "${c -(}out{c )-}/Table_B1b.tex", keep(*visibility_age _cons) ///
+>         b(3) se(3) stats(N r2, fmt(%6.0g) labels("Observations" "\(R^{c -(}2{c )-}\)")) replace
+{txt}
+{com}. 
+. di as res "################################## TABLE B1 Panel B ##################################"
+{res}################################## TABLE B1 Panel B ##################################
+{txt}
+{com}. 
+. estout m1 m2 m3 m4 m5 m6 m7 m8 m9, keep(*visibility_age _cons) ///
+>         stats( N r2, fmt(%6.0g) labels("Observations" "R2")) ///
+>         ce(b(fmt(3) label("Coef")) se(par fmt(3))) nobaselevel title("TABLE B1a")
+{res}
+{txt}TABLE B1a
+{txt}{hline 129}
+{txt}                       m1           m2           m3           m4           m5           m6           m7           m8           m9
+{txt}                  Coef/se      Coef/se      Coef/se      Coef/se      Coef/se      Coef/se      Coef/se      Coef/se      Coef/se
+{txt}{hline 129}
+{txt}2.visibili~e{res}       -0.050       -0.037       -0.034       -0.001       -0.017       -0.015       -0.116       -0.086       -0.086{txt}
+            {res}      (0.046)      (0.046)      (0.046)      (0.060)      (0.063)      (0.063)      (0.072)      (0.072)      (0.072){txt}
+{txt}3.visibili~e{res}        0.023        0.027        0.020        0.088        0.089        0.074       -0.068       -0.083       -0.083{txt}
+            {res}      (0.051)      (0.051)      (0.051)      (0.068)      (0.065)      (0.067)      (0.079)      (0.079)      (0.079){txt}
+{txt}4.visibili~e{res}        0.006        0.023        0.019        0.045        0.032        0.023       -0.049       -0.027       -0.027{txt}
+            {res}      (0.050)      (0.051)      (0.051)      (0.066)      (0.068)      (0.068)      (0.079)      (0.081)      (0.082){txt}
+{txt}_cons       {res}        0.245        0.235        0.144        0.233        0.075       -0.027        0.268        0.193        0.186{txt}
+            {res}      (0.034)      (0.075)      (0.090)      (0.042)      (0.096)      (0.121)      (0.060)      (0.124)      (0.151){txt}
+{txt}{hline 129}
+{txt}Observations{res}          614          614          614          355          355          355          259          259          259{txt}
+{txt}R2          {res}        .0043        .0628        .0672        .0067        .1089        .1142        .0109        .1324        .1324{txt}
+{txt}{hline 129}
+
+{com}. 
+. preserve
+{txt}
+{com}.         qui clear
+{txt}
+{com}.         qui set obs 2
+{txt}
+{com}.         qui gen varname = ""
+{txt}
+{com}.         qui replace varname = "Public: Age below 30 - Age at least 30" in 1
+{txt}
+{com}.         qui replace varname = "(p-value)" in 2
+{txt}
+{com}.         forval col = 1/9{c -(}
+{txt}  2{com}.                 qui gen m`col' = ""
+{txt}  3{com}.         {c )-}
+{txt}
+{com}.         forval col = 1/9{c -(}
+{txt}  2{com}.                 qui replace m`col' = "`c_m`col''" in 1
+{txt}  3{com}.                 qui replace m`col' = "`p_m`col''" in 2
+{txt}  4{com}.         {c )-}
+{txt}
+{com}.         list, sep(100)
+{txt}
+     {c TLC}{hline 40}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c TRC}
+     {c |} {res}                               varname      m1      m2      m3       m4       m5       m6      m7      m8      m9 {txt}{c |}
+     {c LT}{hline 40}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c RT}
+  1. {c |} {res}Public: Age below 30 - Age at least 30   0.034   0.033   0.033   -0.041   -0.041   -0.036   0.135   0.143   0.142 {txt}{c |}
+  2. {c |} {res}                             (p-value)   0.630   0.634   0.627    0.670    0.653    0.688   0.193   0.172   0.175 {txt}{c |}
+     {c BLC}{hline 40}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c -}{hline 8}{c -}{hline 8}{c -}{hline 8}{c -}{hline 7}{c -}{hline 7}{c -}{hline 7}{c BRC}
 
 {com}. restore
 {txt}

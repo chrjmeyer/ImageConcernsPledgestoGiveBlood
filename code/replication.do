@@ -1,21 +1,3 @@
-****************************************
-**                                    **
-** Sorting Into Incentives            **
-** for Prosocial Behavior:            **
-** The Case of Blood Donations        **
-**  							 	  **
-** Christian Meyer, Egon Tripodi      **
-**                                    **
-** christian.meyer@eui.eu             **
-** egon.tripodi@eui.eu                **
-**                                    **
-**                                    **
-** This file analyzes data from the   **
-** field experiment.         	      **
-**                                    **
-****************************************
-
-
 *************************************
 **** 		 Startup 			*****
 *************************************
@@ -67,7 +49,10 @@ do "${dopath}/Table 4.do"
 
 ** Figure B1
 use "${data}/main.dta", clear
+rename survey2_awarenessuniversitätskli survey2_awarenessuniversitatskli
+save "${data}/tempfile_for_R.dta", replace
 do "${dopath}/Figure B1.do"
+erase "${data}/tempfile_for_R.dta"
 
 ** Table A1
 use "${data}/data_table_a1.dta", clear
@@ -80,6 +65,14 @@ do "${dopath}/Table A2.do"
 ** Table A3
 use "${data}/main.dta", clear
 do "${dopath}/Table A3.do" 
+
+** Table B1a
+use "${data}/main.dta", clear
+do "${dopath}/Table B1a.do" 
+
+** Table B1b
+use "${data}/main.dta", clear
+do "${dopath}/Table B1b.do" 
 
 ** Table D1
 use "${data}/data_table_d1.dta", clear
