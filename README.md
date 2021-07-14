@@ -22,25 +22,25 @@ The analysis in the paper is based on four different datasets:
 <tbody>
 <tr class="odd">
 <td><code>data/main.dta</code></td>
-<td>Field experiment</td>
+<td>Survey and field experiment</td>
 <td>Used to replicate all figures and tables but Table 4, Table A1 and Table D1.</td>
 <td>Yes</td>
 </tr>
 <tr class="even">
 <td><code>data/data_table_4.dta</code></td>
-<td>Field experiment</td>
+<td>Administrative data</td>
 <td>Used to replicate Table 4.</td>
 <td>Yes</td>
 </tr>
 <tr class="even">
 <td><code>data/data_table_a1.dta</code></td>
-<td>Field experiment</td>
+<td>Survey and municipal statistics</td>
 <td>Used to replicate Table A1.</td>
 <td>Yes</td>
 </tr>
 <tr class="odd">
 <td><code>data/data_table_d1.dta</code></td>
-<td>Field experiment</td>
+<td>Survey and field experiment</td>
 <td>Used to replicate Table D1.</td>
 <td>Yes</td>
 </tr>
