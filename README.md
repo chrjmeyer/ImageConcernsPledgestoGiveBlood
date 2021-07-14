@@ -23,7 +23,6 @@ The analysis in the paper is based on four different datasets:
 <td><code>data/main.dta</code></td>
 <td>Survey and field experiment</td>
 <td>Used to replicate all figures and tables but Table 4, Table A1 and Table D1.</td>
-<td>Yes</td>
 </tr>
 <tr class="even">
 <td><code>data/data_table_4.dta</code></td>
