@@ -131,8 +131,8 @@ The following is a list of all the figures and tables of the paper together with
 </tr>
 <tr class="even">
 <td>Figure A1</td>
-<td><code>n.a. (no data)</code></td>
-<td><code></code></td>
+<td>(no data)</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -143,14 +143,14 @@ The following is a list of all the figures and tables of the paper together with
 </tr>
 <tr class="even">
 <td>Figure C1</td>
-<td><code>n.a. (no data)</code></td>
-<td><code></code></td>
+<td>no data</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>Figure C2</td>
-<td><code>n.a. (no data)</code></td>
-<td><code></code></td>
+<td>no data</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -187,7 +187,7 @@ The following is a list of all the figures and tables of the paper together with
 <td>Table A1</td>
 <td><code>Table A1.do</code></td>
 <td><code>Table_A1.xlsx</code>,<br/> and console output</td>
-<td>Data in column 1 have been taken directly from Bonn City Government Statistical Office 2017 population statistics (<code>https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2017.pdf</code>)</td>
+<td>Data in column 1 have been taken directly from Bonn City Government Statistical Office 2017 population statistics [(bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2017.pdf)](https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2017.pdf)</td>
 </tr>
 <tr class="even">
 <td>Table A2</td>
