@@ -1,6 +1,6 @@
 # README
 
-The files in this replication package replicate the results of <i>Image Concerns in Pledges to Give Blood: Evidence from a Field Experiment</i> by Christian Johannes Meyer and Egon Tripodi. The master file <code>code/replication.do</code> run all of the code contained in <code>tables_and_figure/do_files/</code> to recreate all figures and tables from the paper. The replicator should expect running the whole replication to take just few minutes. Besides, the markdown file <code>replication.md</code> contains the dynamic output of all analyses conducted (i.e. the whole code along with the output generated through Stata/R).
+The files in this replication package replicate the results of <i>Image Concerns in Pledges to Give Blood: Evidence from a Field Experiment</i> by [Christian Johannes Meyer](https://www.chrmeyer.com) and [Egon Tripodi](https://www.egontripodi.com). The master file <code>code/replication.do</code> runs all of the code contained in <code>tables_and_figure/do_files/</code> and will recreate all figures and tables from the paper. The markdown file <code>replication.md</code> contains the dynamic output of all analyses conducted (i.e. the whole code along with the output generated through Stata/R).
 
 
 ## Data Availability and Provenance Statements
